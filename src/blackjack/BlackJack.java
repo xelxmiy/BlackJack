@@ -2,7 +2,7 @@ package blackjack;
 import java.util.*;
 import javax.swing.*;
 /**
- * @author a.belski
+ * @author Adam Belski
  * @version 1.0.0
  * @since 10-Feb-2023 
  */

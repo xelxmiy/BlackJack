@@ -18,12 +18,12 @@ public class BlackJack {
     //init variables
     static Random random = new Random();
     static String[] args;
-    static Object[] options = {"Hit", "Stay", "Fold"};
+    static String[] options = {"Hit", "Stay", "Fold"};
     static String Turn = "player";
     static int PlayerTotal;
     static int DealerTotal;
-    static String dealerCards = "";
-    static String myCards = "";
+    static String dealerCards;
+    static String myCards;
     //if you look at the git history of this, you will how DealersCards and PlayersCards used to be arrays
     //i got so annoyed at the arrays i switched to lists and it's been infinitely easier
     static List<Integer> DealersCards = new ArrayList<>();
@@ -143,7 +143,7 @@ public class BlackJack {
     //Game end method, Takes in the player and a bust method, if bust is false then
     //player doesn't matter.
     public static void GameEnd(String Player, boolean Bust) {
-        Object[] options1 = {"again", "quit"};
+        String[] options1 = {"again", "quit"};
         if (Player == "fold") {
             DealerWins++;
             int choice = JOptionPane.showOptionDialog(null,
@@ -264,7 +264,7 @@ public class BlackJack {
         if (player.equals("player")) {
             //give player a new card
             //PlayersCards = addMember(random.nextInt(11) + 1, PlayersCards);
-            PlayersCards.add(random.nextInt(11) + 1);
+            PlayersCards.add(random.nextInt(10) + 2);
             //update the total of the player's cards
             PlayerTotal = 0;
             for (int i = 0; i < PlayersCards.size(); i++) {
@@ -272,7 +272,7 @@ public class BlackJack {
             }
         } else {
             //give dealer a new card
-            DealersCards.add(random.nextInt(11) + 1);
+            DealersCards.add(random.nextInt(10) + 2);
             //update the total of the dealer's cards
             DealerTotal = 0;
             for (int i = 0; i < DealersCards.size(); i++) {
